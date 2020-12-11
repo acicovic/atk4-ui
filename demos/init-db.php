@@ -41,6 +41,9 @@ trait ModelLockTrait
     }
 }
 
+/**
+ * @property string $name @Atk\Field()
+ */
 class Country extends Model
 {
     public $table = 'country';
@@ -158,6 +161,11 @@ class Percent extends \Atk4\Data\Field
     public $type = 'float'; // will need to be able to affect rendering and storage
 }
 
+/**
+ * @property string $name             @Atk\Field()
+ * @property bool   $is_folder        @Atk\Field()
+ * @property int    $parent_folder_id @Atk\Field()
+ */
 class File extends Model
 {
     public $table = 'file';

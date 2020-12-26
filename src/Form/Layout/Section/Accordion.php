@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace Atk4\Ui\Form\Layout\Section;
 
 use Atk4\Ui\AccordionSection;
+use Atk4\Ui\Form\Layout as FormLayout;
 
 /**
  * Represents form controls in accordion.
  */
 class Accordion extends \Atk4\Ui\Accordion
 {
-    public $formLayout = \Atk4\Ui\Form\Layout::class;
+    public $formLayout = FormLayout::class;
     public $form;
 
     /**
@@ -43,13 +44,13 @@ class Accordion extends \Atk4\Ui\Accordion
      * @param string $title
      * @param string $icon
      *
-     * @return \Atk4\Ui\Form\Layout
+     * @return FormLayout
      */
     public function addSection($title, \Closure $callback = null, $icon = 'dropdown')
     {
         $section = parent::addSection($title, $callback, $icon);
 
-        return $section->add([$this->formLayout, 'form' => $this->form]);
+        return FormLayout::addToWithCl($section, [$this->formLayout, 'form' => $this->form]);
     }
 
     /**

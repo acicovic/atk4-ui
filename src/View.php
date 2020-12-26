@@ -199,7 +199,7 @@ class View extends AbstractView implements JsExpressionable
         }
 
         $this->setModel(new Model(new Static_($data)), $fields); // @phpstan-ignore-line
-        $this->model->getField($this->model->id_field)->type = null; // TODO probably unwanted
+        $this->model->getField($this->model->id_field)->type = null; // @phpstan-ignore-line TODO probably unwanted
 
         return $this->model;
     }
@@ -373,7 +373,7 @@ class View extends AbstractView implements JsExpressionable
     public function getClosestOwner(self $object, $class)
     {
         if ($object->issetOwner()) {
-            return;
+            return null;
         }
 
         if ($object->getOwner() instanceof $class) {

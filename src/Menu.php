@@ -161,10 +161,8 @@ class Menu extends View
 
     /**
      * Adds divider.
-     *
-     * @return View
      */
-    public function addDivider()
+    public function addDivider(): View
     {
         return parent::add([View::class, 'class' => ['divider']]);
     }

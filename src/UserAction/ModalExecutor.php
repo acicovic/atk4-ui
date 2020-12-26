@@ -660,7 +660,7 @@ class ModalExecutor extends Modal implements JsExecutorInterface
      */
     protected function addFormTo(View $view): Form
     {
-        $f = $view->add($this->form);
+        $f = Form::addToWithCl($view, $this->form);
         $f->buttonSave->destroy();
 
         return $f;

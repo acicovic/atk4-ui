@@ -44,6 +44,9 @@ class App
         'flatpickr' => 'https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.6',
     ];
 
+    /** @var string Locale used for translation */
+    public $locale = 'en';
+
     /** @var string Version of Agile UI */
     public $version = '2.4-x';
 

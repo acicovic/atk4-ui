@@ -9,6 +9,7 @@ use Atk4\Core\DiContainerTrait;
 use Atk4\Core\DynamicMethodTrait;
 use Atk4\Core\HookTrait;
 use Atk4\Core\InitializerTrait;
+use Atk4\Core\Translator\Translator;
 use Atk4\Data\Persistence;
 use Atk4\Ui\Exception\ExitApplicationException;
 use Atk4\Ui\Persistence\Ui as UiPersistence;
@@ -212,6 +213,21 @@ class App
         if (!isset($this->ui_persistence)) {
             $this->ui_persistence = new UiPersistence();
         }
+    }
+
+    /**
+     * Translate the given message.
+     *
+     * @param string      $message    The message to be translated
+     * @param array       $parameters Array of parameters used to translate message
+     * @param string|null $domain     The domain for the message or null to use the default
+     * @param string|null $locale     The locale or null to use the default
+     *
+     * @return string The translated string
+     */
+    public function _($message, array $parameters = [], ?string $context = null, ?string $locale = null): string
+    {
+        return Translator::instance()->_($message, $parameters, $context, $locale ?? $this->locale);
     }
 
     protected function setupTemplateDirs()

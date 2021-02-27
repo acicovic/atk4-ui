@@ -391,8 +391,8 @@ class View extends AbstractView implements JsExpressionable
      * Override this method without compatibility with parent, if you wish
      * to set your own things your own way for your view.
      *
-     * @param string|array $arg1
-     * @param string|null  $arg2
+     * @param mixed $arg1
+     * @param mixed $arg2
      *
      * @return $this
      */
@@ -979,10 +979,10 @@ class View extends AbstractView implements JsExpressionable
      *
      * @see http://agile-ui.readthedocs.io/en/latest/js.html
      *
-     * @param string                            $event    JavaScript event
-     * @param string                            $selector Optional jQuery-style selector
-     * @param JsChain|\Closure|Model\UserAction $action   code to execute or \Atk4\Data\UserAction
-     * @param array                             $defaults Options
+     * @param string $event    JavaScript event
+     * @param string $selector Optional jQuery-style selector
+     * @param mixed  $action   code to execute
+     * @param array  $defaults Options
      *
      * @return Jquery
      */
